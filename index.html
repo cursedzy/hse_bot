@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>reminder-bot</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                    <div class="navbar-nav">
+                        <div class="nav-item"><img src="../images/hse_logo.png" alt="НИУ ВШЭ психологическое тестирование"></div>
+                        <div class="nav-item"><h1>НИУ ВШЭ Психологическое тестирование</h1></div>
+                        <div class="nav-item has-dropdown" id="menu"><a href="#">Меню</a>
+                            <ul class="dropdown">
+                                <li class="dropdown-item"><a href="#">Главная</a></li>
+                                <li class="dropdown-item"><a href="#">Тест</a></li>
+                                <li class="dropdown-item"><a href="#">Мои результаты</a></li>
+                                <li class="dropdown-item"><a href="#">Материалы</a></li>
+                                <li class="dropdown-item"><a href="#">О нас</a></li>
+                            </ul>
+                        </div>   
+                    </div>
+            </nav>
+        </header>
+        <main>
+            <div id="app" class="wrap">
+                <div class="init_box">
+                    <h2 class="test-header">Насколько каждое слово описывает ваше состояние в данный момент?</h2>
+                    <button id="init_button">Начать</button>
+                </div>
+                <div class="id_input">
+                    <label for="name"> 
+                        Логин: 
+                    </label><br> 
+                    <input type="text" id="login" name="name" placeholder="ya_lublu_bulochki" required>
+                    <p>*пожалуйста, введите ваш логин указанный при регистрации в ТГ. Это поможет нам лучше обработывать ваши результаты</p>
+                    <button id="send_id">Далее</button>                  
+                </div>
+                <div class="test_box">
+                    <form action="">
+                        <h3 class="q_number">Вопрос №1</h3>
+                        <label class="statement" id="q1" required>Грусть</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №2</h3>
+                        <label class="statement" id="q2" required>Беспокойство/тревога</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №3</h3>
+                        <label class="statement" id="q3" required>Раздражение</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №4</h3>
+                        <label class="statement" id="q4" required>Чувство одиночества</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №5</h3>
+                        <label class="statement" id="q5" required>Вина</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №6</h3>
+                        <label class="statement" id="q6" required>Апатия/безразличие </label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №7</h3>
+                        <label class="statement" id="q7" required>Подавленность</label>
+                            <ul class='likert'>
+                                <li>
+                                    <input type="radio" id="a0" name="likert" value="0" required>
+                                    <label>0</label>
+                                    <label id="explanation">Совсем не испытывал</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a1" name="likert" value="1" required>
+                                    <label>1</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a2" name="likert" value="2" required>
+                                    <label>2</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a3" name="likert" value="3" required>
+                                    <label>3</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a4" name="likert" value="4" required>
+                                    <label>4</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="a5" name="likert" value="5" required>
+                                    <label>5</label>
+                                    <label id="explanation">Испытывал очень интенсивно</label>
+                                </li>
+                            </ul>
+                        <h3 class="q_number">Вопрос №8</h3>
+                        <label class="statement" id="q8" required>С момента предыдущего уведомления, для того чтобы улучшить своё эмоциональное состояние, какие стратегии вы использовали?</label>
+                        <p id="q8_p">*если вы впервые проходите данный тест, укажите последнюю использованную вами стратегию.</p>
+
+                            <input type="radio" id="a_change" name="type" value="change" required> 
+                                <label for="change"> 
+                                Изменял(а) своё отношение к ситуации, чтобы справиться с отрицательными эмоциями (переоценка)
+                                </label>
+
+                            <input type="radio" id="a_supress" name="type" value="supress" required> 
+                                <label for="supress"> 
+                                Подавлял(а) выражение своих эмоций (подавление) 
+                                </label><br>
+
+                            <input type="radio" id="a_accept" name="type" value="accept" required> 
+                                <label for="accept"> 
+                                Принимал(а) текущие переживания, не сопротивляясь им и не пытаясь их изменить (принятие)
+                                </label><br>
+
+                            <input type="radio" id="a_analize" name="type" value="analize" required> 
+                                <label for="analize"> 
+                                Прокручивал(а) мысли о неприятной ситуации снова и снова (руминация)
+                                </label><br>
+                            
+                            <input type="radio" id="a_awoid" name="type" value="awoid" required> 
+                                <label for="awoid"> 
+                                Отстранялся от своих эмоций так, будто их нет (избегание)  
+                                </label><br>
+
+                            <input type="radio" id="a_decide" name="type" value="decide" required> 
+                                <label for="decide"> 
+                                Старался решить проблему, вызвавшую неприятные эмоции (решение проблемы)  
+                                </label><br>
+                            
+                            <div class="buttons">
+                                <button class="clear">Clear</button>
+                                <button class="submit">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+            
+        <footer>
+            <div class="contacts">
+                <ul> Контакты
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+            <div class="r_reserved">
+                <p>© 2024. HSE Psychology x cursedzy</p>
+            </div>
+        </footer>  
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script src="app.js"></script>  
+    </body>
+</html>
