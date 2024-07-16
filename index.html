@@ -349,6 +349,9 @@
                 }
             });
 
+            function collectAnswer() {
+                const currentRadioButtons = questions[currentQuestion]
+
                         if (questionId && answerValue !== null) {
                 userResponses.answers[questionId] = answerValue;
             }
