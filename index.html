@@ -348,4 +348,45 @@
                     sendResults();
                 }
             });
+
+                        if (questionId && answerValue !== null) {
+                userResponses.answers[questionId] = answerValue;
+            }
+        }
+
+        function sendResults() {
+            // Assuming there's a function or API call to send userResponses to the server
+            // For demonstration purposes, we'll log the responses to console
+            console.log('User Responses:', userResponses);
+
+            // Reset the form or show a completion message
+            // For demonstration, let's reset the form
+            resetForm();
+        }
+
+        function resetForm() {
+            // Reset userResponses object
+            userResponses.login = '';
+            userResponses.answers = {};
+
+            // Reset form fields if necessary
+            document.getElementById('login').value = '';
+            questions.forEach(question => {
+                const radios = question.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.checked = false;
+                });
+            });
+
+                    // Show initial state
+                    initBox.style.display = 'block';
+                    idInput.style.display = 'none';
+                    testBox.style.display = 'none';
+        
+                    // Reset current question
+                    currentQuestion = 0;
+                }
+            });
+</script>
+
     </script>
