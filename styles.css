@@ -19,7 +19,7 @@ var(--tg-theme-button-active-hover-text-color)
     box-sizing: border-box;
     font-size: 10px;
     color: var(--tg-theme-text-color);
-    background-color: var(--tg-theme-bg-color);
+    background-color: white;
     list-style:none;
 }
 
