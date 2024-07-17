@@ -33,16 +33,6 @@ var(--tg-theme-button-active-hover-text-color)
   background-color: #427bf5;
 }
 
-footer {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  color: white;
-  background-color: #427bf5;
-  padding: 1rem 0.75rem;
-  margin: auto;
-  width: 110%;
-}
-
 .contacts {
   list-style: none;
   text-align: left;
