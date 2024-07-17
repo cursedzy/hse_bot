@@ -23,6 +23,11 @@ var(--tg-theme-button-active-hover-text-color)
     list-style:none;
 }
 
+body{
+    border: 2px solid #5D6AE5;
+    border-radius: 20px;
+}
+    
 .navbar {
     margin: auto;
     height: 70px;
@@ -112,10 +117,8 @@ form .buttons {
 } 
 
 form .buttons button {
-  padding: 5px 10px;
-  background-color: var(--tg-theme-button-color);
-  border: 0;
-  border-radius: 25px;
+  border: 2px solid #5D6AE5;
+  border-radius: 20px;
 }
 
 form .buttons .clear {background-color: var(--tg-theme-button-secondary-color);}
