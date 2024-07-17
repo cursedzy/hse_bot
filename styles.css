@@ -29,6 +29,7 @@ body{
 }
     
 .navbar {
+    border-radius-top: 20px;
     margin: auto;
     height: 70px;
     width: 100%;
