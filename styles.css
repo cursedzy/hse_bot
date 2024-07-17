@@ -29,12 +29,23 @@ body{
 }
     
 .navbar {
-    border-radius-top: 20px;
+    border-top-radius: 20px;
     margin: auto;
     height: 70px;
     width: 100%;
     padding-left: 0.5rem;
+    padding: 1rem 0.75rem
     background-color: #5D6AE5;
+}
+
+footer {
+    border-bottom-radius: 20px;
+    margin: auto;
+    width: 100%;
+    padding-left: 0.5rem;
+    background-color: #5D6AE5;
+}
+
 }
 
 .nav-item{
