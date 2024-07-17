@@ -314,41 +314,57 @@
             const testBox = document.querySelector('.test_box');
             const initBox = document.querySelector('.init_box');
             const questions = document.querySelectorAll('.question');
+            const navButtons = document.querySelectorAll('.navigation-buttons');
             let currentQuestion = 0;
-
+        
             const userResponses = {
                 login: '',
                 answers: {}
             };
-
+        
             initButton.addEventListener('click', function() {
                 initBox.style.display = 'none';
                 idInput.style.display = 'block';
             });
-
+        
             sendIdButton.addEventListener('click', function() {
                 const loginInput = document.getElementById('login').value;
                 if (loginInput) {
                     userResponses.login = loginInput;
                     idInput.style.display = 'none';
                     testBox.style.display = 'block';
-                    questions[currentQuestion].style.display = 'block';
+                    showQuestion(currentQuestion);
                 }
             });
-
-            testForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                collectAnswer();
-
-                if (currentQuestion < questions.length - 1) {
-                    questions[currentQuestion].style.display = 'none';
-                    currentQuestion++;
-                    questions[currentQuestion].style.display = 'block';
-                } else {
-                    sendResults();
+        
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('next-question')) {
+                    collectAnswer();
+                    if (currentQuestion < questions.length - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        sendResults();
+                    }
+                }
+        
+                if (event.target.classList.contains('prev-question')) {
+                    if (currentQuestion > 0) {
+                        currentQuestion--;
+                        showQuestion(currentQuestion);
+                    }
                 }
             });
-
+        
+            function showQuestion(index) {
+                questions.forEach((question, idx) => {
+                    question.style.display = idx === index ? 'block' : 'none';
+                });
+                navButtons.forEach((buttons, idx) => {
+                    buttons.style.display = idx === index ? 'block' : 'none';
+                });
+            }
+        
             function collectAnswer() {
                 const currentRadioButtons = questions[currentQuestion].querySelectorAll('input[type="radio"]');
                 for (let radio of currentRadioButtons) {
@@ -358,9 +374,9 @@
                     }
                 }
             }
-
+        
             function sendResults() {
-                fetch('http://localhost:5000/submit', {
+                fetch('YOUR_HEROKU_APP_URL/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -377,6 +393,8 @@
                 });
             }
         });
-    </script>
+        </script>
+
+
 </body>
 </html>
